@@ -2,9 +2,8 @@ name: Build Android APK
 on:
   push: # Spustí se automaticky při pushi do JAKÉKOLIV větve
   workflow_dispatch: # Umožní ruční spuštění přes tlačítko v Actions pro libovolnou větev
-
 jobs:
-  build:
+  build: 001
     runs-on: ubuntu-latest
    ​ steps:
     - name: Checkout kód repozitáře
