@@ -2,6 +2,7 @@ name: Build Android APK
 on:
   push: # Spustí se automaticky při pushi do JAKÉKOLIV větve
   workflow_dispatch: # Umožní ruční spuštění přes tlačítko v Actions pro libovolnou větev
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,13 +16,14 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-       ​- name: Nastavení a kešování Gradle
-         uses: gradle/actions/setup-gradle@v4
-       ​- name: Nastavení spustitelnosti pro gradlew
-         run: chmod +x gradlew         ​- name: Kompilace Debug APK
-         run: ./gradlew assembleDebug
-       ​- name: Nahrání vygenerovaného APK jako Artifact
-         uses: actions/upload-artifact@v4
+      ​- name: Nastavení a kešování Gradle
+        uses: gradle/actions/setup-gradle@v4
+      ​- name: Nastavení spustitelnosti pro gradlew
+        run: chmod +x gradlew     
+      ​- name: Kompilace Debug APK
+        run: ./gradlew assembleDebug
+      ​- name: Nahrání vygenerovaného APK jako Artifact
+        uses: actions/upload-artifact@v4
          with:
            name: app-debug-apk
            path: app/build/outputs/apk/debug/*.apk
