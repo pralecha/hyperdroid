@@ -1,4 +1,5 @@
 name: Build Android APK
+run-name: ${{ github.actor }} is bulding App
 on:
   push: # Spustí se automaticky při pushi do JAKÉKOLIV větve
   #workflow_dispatch: # Umožní ruční spuštění přes tlačítko v Actions pro libovolnou větev
