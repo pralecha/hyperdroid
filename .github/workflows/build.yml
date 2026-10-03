@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is bulding App
 on: [push]
 jobs:
   build:
-    run-on: ubuntu-latest 
+    runs-on: ubuntu-latest 
     steps:
       - name: krok1
         uses: actions/checkout@v4
