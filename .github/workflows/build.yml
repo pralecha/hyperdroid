@@ -1,10 +1,8 @@
 name: Build Android APK
 run-name: ${{ github.actor }} is bulding App
-on:
-  push: # Spustí se automaticky při pushi do JAKÉKOLIV větve
-  #workflow_dispatch: # Umožní ruční spuštění přes tlačítko v Actions pro libovolnou větev
-jobs:
-  build:
+on: [push]
+  jobs:
+    build:
     runs-on: ubuntu-latest
    ​ steps:
       - name: Checkout kód repozitáře
@@ -25,5 +23,5 @@ jobs:
     ​  - name: Nahrání vygenerovaného APK jako Artifact
         uses: actions/upload-artifact@v4
         with:
-      - name: app-debug-apk
-        path: app/build/outputs/apk/debug/*.apk
+        - name: app-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
